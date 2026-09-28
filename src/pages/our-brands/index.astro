@@ -1,0 +1,64 @@
+---
+// src/pages/our-brands/index.astro
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Our Brands"
+  description="Kesar's own brands: Aevum, a gold and silver watch brand, and Tarini925, a 925 silver jewellery brand."
+>
+  <!-- 1. HEADER -->
+  <section class="bg-ivory pt-32 pb-24 text-center border-b border-hairline">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1 class="animate-rise font-display text-5xl text-ink tracking-wide md:text-6xl">
+        OUR BRANDS
+      </h1>
+      <p class="animate-rise mt-6 font-body text-[11px] font-semibold tracking-[0.2em] text-ink/60 uppercase" style="animation-delay: 100ms;">
+        Kesar's expertise, expressed as its own.
+      </p>
+      <p class="animate-rise mt-8 font-body text-sm leading-relaxed text-ink/70" style="animation-delay: 200ms;">
+        Aevum and Tarini925 are not services offered to clients — they are direct products of the same precious-metal expertise Kesar brings to its B2B watchmaking work.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. AEVUM (Dark Section) -->
+  <section class="bg-ink text-ivory border-b border-hairline">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10 md:py-32">
+      <div class="relative aspect-[4/3] w-full overflow-hidden bg-ink/50 group">
+         <!-- Save image as "aevum-hero.jpg" in the public folder -->
+         <img src="/aevum-hero.jpg" alt="Aevum Watches" class="w-full h-full object-cover opacity-80 mix-blend-lighten transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="md:pl-10">
+        <p class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-soft">Watches</p>
+        <h2 class="mt-4 font-display text-5xl md:text-6xl tracking-wide">AEVUM</h2>
+        <p class="mt-6 font-body text-sm leading-relaxed text-ivory/70">
+          Kesar's own gold and silver watch brand. Built around the character, weight, and beauty of precious metal timepieces. Currently in development.
+        </p>
+        <a href="/our-brands/aevum" class="mt-10 inline-block border border-ivory/30 px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory transition-colors hover:bg-ivory hover:text-ink">
+          Explore Aevum
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TARINI925 (Light Section) -->
+  <section class="bg-sand text-ink">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10 md:py-32">
+      <div class="md:order-2 relative aspect-[4/3] w-full overflow-hidden bg-ivory border border-hairline group">
+         <!-- Save image as "tarini-hero.jpg" in the public folder -->
+         <img src="/tarini-hero.jpg" alt="Tarini925 Jewellery" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+      </div>
+      <div class="md:pr-10">
+        <p class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">Jewellery</p>
+        <h2 class="mt-4 font-display text-5xl md:text-6xl tracking-wide">TARINI925</h2>
+        <p class="mt-6 font-body text-sm leading-relaxed text-ink/70">
+          Kesar's own 925 silver jewellery brand, for direct and B2B customers. Developed with the same precious-metal craftsmanship Kesar brings to watchmaking.
+        </p>
+        <a href="/tarini925" class="mt-10 inline-block border border-ink px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-ivory">
+          Explore Tarini925
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

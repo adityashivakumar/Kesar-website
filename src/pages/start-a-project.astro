@@ -1,0 +1,158 @@
+---
+// src/pages/start-a-project.astro
+import Layout from "../layouts/Layout.astro";
+
+// NOTE: This form is presentational. You will need to wire it up to 
+// a backend service (like Supabase or Formspree) to handle submissions.
+---
+
+<Layout
+  title="Start a Project"
+  description="Inquire about a new watchmaking or product development project with Kesar."
+>
+  <!-- 1. HERO SECTION (Dark per wireframe) -->
+  <section class="bg-ink pt-40 pb-28 text-center text-ivory">
+    <div class="mx-auto max-w-4xl px-6">
+      <h1 class="animate-rise font-display text-5xl md:text-6xl tracking-wide leading-[1.1]">
+        LET'S CREATE<br />SOMETHING TIMELESS.
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. INQUIRY & CONTACT SECTION -->
+  <section class="bg-ivory py-24">
+    <div class="mx-auto max-w-6xl px-6 grid gap-16 lg:grid-cols-3">
+      
+      <!-- Left Column: The Form -->
+      <div class="lg:col-span-2">
+        <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">
+          Project Inquiry
+        </h2>
+        
+        <form id="project-form" class="space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <label class="block group">
+              <span class="sr-only">Name</span>
+              <input 
+                required 
+                type="text" 
+                name="name" 
+                placeholder="Name *" 
+                class="w-full border-b border-hairline bg-transparent py-3 font-body text-xs text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-ink" 
+              />
+            </label>
+            <label class="block group">
+              <span class="sr-only">Company</span>
+              <input 
+                type="text" 
+                name="company" 
+                placeholder="Company" 
+                class="w-full border-b border-hairline bg-transparent py-3 font-body text-xs text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-ink" 
+              />
+            </label>
+          </div>
+
+          <label class="block group">
+            <span class="sr-only">Email</span>
+            <input 
+              required 
+              type="email" 
+              name="email" 
+              placeholder="Email *" 
+              class="w-full border-b border-hairline bg-transparent py-3 font-body text-xs text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-ink" 
+            />
+          </label>
+
+          <label class="block group">
+            <span class="font-body text-[10px] uppercase tracking-widest text-ink/50 mb-2 block">Project Type</span>
+            <div class="relative">
+              <select 
+                name="project_type" 
+                class="w-full appearance-none border border-hairline bg-transparent px-4 py-3 font-body text-xs text-ink outline-none transition-colors focus:border-ink cursor-pointer rounded-sm"
+              >
+                <option value="" disabled selected>Select...</option>
+                <option value="New Watch Brand">New Watch Brand</option>
+                <option value="OEM / ODM">OEM / ODM</option>
+                <option value="Jewellery">Jewellery (Tarini925)</option>
+                <option value="Components">Components / Manufacturing</option>
+                <option value="Other">Other</option>
+              </select>
+              <!-- Custom dropdown arrow -->
+              <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-ink/50">
+                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </div>
+            </div>
+          </label>
+
+          <label class="block group">
+            <span class="font-body text-[10px] uppercase tracking-widest text-ink/50 mb-2 block">Project Details</span>
+            <textarea 
+              required
+              name="description" 
+              rows="6" 
+              placeholder="Tell us about your project..." 
+              class="w-full border border-hairline bg-transparent px-4 py-3 font-body text-xs text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-ink rounded-sm resize-none"
+            ></textarea>
+          </label>
+
+          <div class="pt-4">
+            <button 
+              type="submit" 
+              class="bg-ink px-10 py-4 font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-ivory hover:bg-gold hover:text-ink transition-colors"
+            >
+              Submit Inquiry
+            </button>
+            <p id="form-status" class="mt-4 font-body text-xs text-gold-deep" role="status"></p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Contact Info -->
+      <div class="lg:col-span-1">
+        <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">
+          Prefer to talk?
+        </h2>
+        
+        <div class="bg-sand p-10 flex flex-col items-center justify-center text-center space-y-10 rounded-sm">
+          
+          <div class="group cursor-pointer">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 transition-colors group-hover:border-gold">
+              <svg class="w-5 h-5 text-ink transition-colors group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
+            </div>
+            <p class="mt-4 font-body text-[10px] uppercase tracking-widest text-ink/60 transition-colors group-hover:text-ink">Email Us</p>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 transition-colors group-hover:border-gold">
+              <svg class="w-5 h-5 text-ink transition-colors group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.18-7.076-7.076l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"></path></svg>
+            </div>
+            <p class="mt-4 font-body text-[10px] uppercase tracking-widest text-ink/60 transition-colors group-hover:text-ink">Call Us</p>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-ink/20 transition-colors group-hover:border-gold">
+              <svg class="w-5 h-5 text-ink transition-colors group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"></path></svg>
+            </div>
+            <p class="mt-4 font-body text-[10px] uppercase tracking-widest text-ink/60 transition-colors group-hover:text-ink">Book a Meeting</p>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Simple client-side validation handler
+  const form = document.getElementById("project-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (status) {
+      status.textContent = "Thank you. This form will be connected to the inbox shortly.";
+      form.reset();
+    }
+  });
+</script>

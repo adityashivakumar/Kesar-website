@@ -1,0 +1,70 @@
+---
+// src/components/Footer.astro
+import { nav } from "../lib/content";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-hairline bg-ink">
+  <div class="mx-auto max-w-7xl px-6 py-16 md:px-10">
+    <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      
+      <div>
+        <p class="font-display text-2xl text-ivory">Kesar</p>
+        <p class="mt-4 max-w-sm font-body text-sm leading-relaxed text-ivory/60">
+          Precious-metal watchmaking and product development, from first idea
+          through to finished timepiece.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-body text-sm text-ivory/40">Site</p>
+        <ul class="mt-4 space-y-2.5">
+          {nav.map((item) => (
+            <li>
+              <a href={item.href} class="font-body text-sm text-ivory/75 hover:text-gold transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-body text-sm text-ivory/40">Brands</p>
+        <ul class="mt-4 space-y-2.5">
+          <li>
+            <a href="/our-brands/aevum" class="font-body text-sm text-ivory/75 hover:text-gold transition-colors">
+              Aevum
+            </a>
+          </li>
+          <li>
+            <a href="/tarini925" class="font-body text-sm text-ivory/75 hover:text-gold transition-colors">
+              Tarini925
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-body text-sm text-ivory/40">Contact</p>
+        <ul class="mt-4 space-y-2.5">
+          <li>
+            <a href="/start-a-project" class="font-body text-sm text-ivory/75 hover:text-gold transition-colors">
+              Start a Project
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@kesardesigns.com" class="font-body text-sm text-ivory/75 hover:text-gold transition-colors">
+              hello@kesardesigns.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col gap-3 border-t border-hairline pt-6 text-xs text-ivory/40 md:flex-row md:items-center md:justify-between">
+      <p>&copy; {currentYear} Kesar. All rights reserved.</p>
+      <p>Parent company of Aevum and Tarini925.</p>
+    </div>
+  </div>
+</footer>

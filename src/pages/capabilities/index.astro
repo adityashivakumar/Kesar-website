@@ -1,0 +1,102 @@
+---
+// src/pages/capabilities/index.astro
+import Layout from "../../layouts/Layout.astro";
+import { capabilities } from "../../lib/content";
+
+// Data for the "Why Partner With Kesar?" section at the bottom of the wireframe
+const partnerReasons = [
+  {
+    title: "End-to-End",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a2.25 2.25 0 0 1 2.25-2.25h1.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-15 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h1.5a2.25 2.25 0 0 1 2.25 2.25v7.5M6 10.5h12M12 10.5V3m0 0a3 3 0 1 0 0 6 3 3 0 1 0 0-6Z" />`,
+    copy: "A complete supply chain from initial concept sketches to final global delivery."
+  },
+  {
+    title: "Expertise",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.492-3.053c.241-.296.402-.653.468-1.026L15.3 8.35m-3.88 6.82-.71 2.13a1.5 1.5 0 0 1-1.42 1.05H6.94a1.5 1.5 0 0 1-1.42-1.05l-.71-2.13a1.5 1.5 0 0 1 .34-1.55l1.63-1.63a1.5 1.5 0 0 1 1.55-.34l2.13.71c.373.125.73.295 1.05.5M15.3 8.35l-1.026-2.92a2.25 2.25 0 0 0-2.124-1.513H9.86a2.25 2.25 0 0 0-2.124 1.513L6.71 8.35m8.59 0-3.053 2.492" />`,
+    copy: "Deep specialization in working with gold, silver, and precious metals."
+  },
+  {
+    title: "Quality",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />`,
+    copy: "Stringent multi-stage QC processes ensuring flawless final assembly."
+  },
+  {
+    title: "Scalability",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />`,
+    copy: "Equipped to handle bespoke individual runs or large-scale wholesale manufacturing."
+  }
+];
+---
+
+<Layout
+  title="Capabilities"
+  description="Kesar's full suite of watchmaking capabilities, from concept to completion."
+>
+  <!-- 1. HERO SECTION -->
+  <section class="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-ink text-center">
+    <div class="absolute inset-0">
+      <!-- Save as "capabilities-hero.png" -->
+      <img src="/capabilities-hero.png" alt="Watchmaking Concept to Completion" class="h-full w-full object-cover opacity-40" />
+      <div class="absolute inset-0 bg-ink/50"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <h1 class="animate-rise font-display text-4xl leading-[1.1] text-ivory md:text-6xl">
+        FROM CONCEPT<br />TO COMPLETION.
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. CAPABILITIES LIST -->
+  <section class="bg-ivory py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-center font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">Our Capabilities</h2>
+      
+      <div class="mt-16 flex flex-col">
+        {capabilities.map((cap, index) => (
+          <div class="group flex flex-col md:flex-row gap-6 md:gap-10 border-b border-hairline py-12 first:border-t">
+            <!-- Left: Square Thumbnail -->
+            <div class="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-sand overflow-hidden">
+              <!-- Save as "cap-1.jpg", "cap-2.jpg", etc. -->
+              <img src={`/cap${index + 1}.jpg`} alt={cap.title} class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+            </div>
+            
+            <!-- Right: Text Content -->
+            <div class="flex-1">
+              <a href={`/capabilities/${cap.slug}`} class="inline-block">
+                <h3 class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep md:text-3xl">{cap.title}</h3>
+              </a>
+              <p class="mt-4 font-body text-xs leading-relaxed text-ink/70 max-w-2xl">{cap.detail || cap.short}</p>
+              <a href={`/capabilities/${cap.slug}`} class="mt-4 inline-block font-body text-[10px] font-semibold uppercase tracking-widest text-gold-deep transition-colors hover:text-ink">
+                View Details &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHY PARTNER WITH KESAR? -->
+  <section class="bg-sand py-24 text-center">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">Why Partner With Kesar?</h2>
+      
+      <div class="mt-16 grid grid-cols-2 gap-x-8 gap-y-16 md:grid-cols-4 md:gap-x-12">
+        {partnerReasons.map((reason) => (
+          <div class="flex flex-col items-center group">
+            <!-- Icon Frame -->
+            <div class="flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-ivory text-ink/40 transition-colors duration-300 group-hover:border-gold group-hover:text-gold">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <Fragment set:html={reason.icon} />
+              </svg>
+            </div>
+            <!-- Text -->
+            <h4 class="mt-6 font-display text-xl text-ink md:text-2xl">{reason.title}</h4>
+            <p class="mt-3 font-body text-[11px] leading-relaxed text-ink/60">{reason.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout> 

@@ -1,0 +1,41 @@
+---
+// src/components/Nav.astro
+---
+
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-hairline transition-all duration-300">
+  <div class="mx-auto max-w-[1400px] px-6 md:px-10 h-20 flex items-center justify-between">
+    
+    <!-- Left: Logo -->
+    <a href="/" class="flex-shrink-0 focus-visible:outline-none group">
+      <img 
+        src="/WhatsApp Image 2026-09-21 at 4.22.54 PM.jpeg" 
+        alt="Kesar" 
+        class="h-10 md:h-12 w-auto object-contain mix-blend-multiply scale-125 origin-left transition-opacity duration-300 group-hover:opacity-70" 
+      />
+    </a>
+
+    <!-- Center: Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8 lg:gap-12">
+      <a href="/about" class="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-ink/70 transition-colors hover:text-ink">About</a>
+      <a href="/capabilities" class="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-ink/70 transition-colors hover:text-ink">Capabilities</a>
+      <a href="/our-brands" class="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-ink/70 transition-colors hover:text-ink">Brands</a>
+      <a href="/projects" class="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-ink/70 transition-colors hover:text-ink">Projects</a>
+    </nav>
+
+    <!-- Right: CTA Button -->
+    <div class="hidden md:flex flex-shrink-0">
+      <a 
+        href="/start-a-project" 
+        class="bg-ink px-6 py-2.5 font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-ivory transition-all duration-300 hover:bg-gold hover:text-ink"
+      >
+        Start a Project
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="md:hidden flex flex-col gap-1.5 p-2 text-ink focus:outline-none group">
+      <span class="block h-[1px] w-6 bg-current transition-colors group-hover:bg-gold"></span>
+      <span class="block h-[1px] w-6 bg-current transition-colors group-hover:bg-gold"></span>
+    </button>
+  </div>
+</header>

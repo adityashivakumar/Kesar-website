@@ -1,0 +1,81 @@
+---
+// src/pages/capabilities/[slug].astro
+import Layout from "../../layouts/Layout.astro";
+import MetalPlate from "../../components/MetalPlate.astro";
+import { capabilities } from "../../lib/content";
+
+export function getStaticPaths() {
+  return capabilities.map((c) => ({
+    params: { slug: c.slug },
+    props: { capability: c },
+  }));
+}
+
+const { capability } = Astro.props;
+const others = capabilities.filter((c) => c.slug !== capability.slug).slice(0, 3);
+---
+
+<Layout title={capability.title} description={capability.short}>
+  <!-- Hero Section -->
+  <section class="border-b border-hairline bg-ink">
+    <div class="mx-auto max-w-7xl px-6 pb-16 pt-40 md:px-10 md:pt-48">
+      <a 
+        href="/capabilities" 
+        class="animate-rise inline-block font-body text-sm text-ivory/50 transition-colors duration-300 hover:text-gold"
+      >
+        &larr; Capabilities
+      </a>
+      <h1 class="animate-rise mt-5 max-w-2xl font-display text-5xl text-ivory md:text-6xl" style="animation-delay: 100ms;">
+        {capability.title}
+      </h1>
+      <p class="animate-rise prose-copy mt-6 font-body text-lg leading-relaxed text-ivory/65" style="animation-delay: 200ms;">
+        {capability.detail}
+      </p>
+    </div>
+  </section>
+
+  <!-- Visual Section -->
+  <section class="bg-ink">
+    <div class="mx-auto max-w-7xl px-6 py-16 md:px-10">
+      <div class="animate-rise" style="animation-delay: 300ms;">
+        <MetalPlate 
+          tone="graphite" 
+          ratio="aspect-[21/9]" 
+          label={`${capability.title} — process photography`} 
+          class="rounded-sm shadow-2xl shadow-black/50" 
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="border-t border-hairline bg-graphite/40">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center md:px-10">
+      <h2 class="font-display text-3xl text-ivory md:text-4xl">Have a project that needs this?</h2>
+      <a 
+        href="/start-a-project" 
+        class="mt-8 inline-block border border-gold bg-gold px-8 py-3.5 font-body text-sm text-ink transition-all duration-300 hover:bg-gold-soft hover:opacity-90"
+      >
+        Start a Project
+      </a>
+    </div>
+  </section>
+
+  <!-- Related Capabilities Section -->
+  <section class="border-t border-hairline bg-ink">
+    <div class="mx-auto max-w-7xl px-6 py-20 md:px-10">
+      <p class="font-body text-sm text-ivory/40">Related capabilities</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        {others.map((c) => (
+          <a 
+            href={`/capabilities/${c.slug}`} 
+            class="group block border border-hairline bg-ink p-6 transition-all duration-300 hover:border-gold/50 hover:bg-graphite/20 hover:-translate-y-1"
+          >
+            <p class="font-display text-xl text-ivory transition-colors duration-300 group-hover:text-gold">{c.title}</p>
+            <p class="mt-2 font-body text-sm text-ivory/50 transition-colors duration-300 group-hover:text-ivory/70">{c.short}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

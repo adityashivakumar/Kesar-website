@@ -1,0 +1,73 @@
+---
+// src/pages/projects.astro
+import Layout from "../layouts/Layout.astro";
+
+// Generates 9 placeholders for the grid.
+const placeholderProjects = Array.from({ length: 9 }, (_, i) => ({
+  id: i + 1,
+}));
+---
+
+<Layout
+  title="Projects"
+  description="Selected Kesar projects across precious-metal watch design, development, manufacturing and assembly."
+>
+  <!-- 1. HERO SECTION (Dark per wireframe) -->
+  <section class="bg-ink py-32 text-center text-ivory">
+    <div class="mx-auto max-w-4xl px-6 pt-10">
+      <h1 class="animate-rise font-display text-5xl md:text-6xl tracking-wide">
+        IDEAS BROUGHT TO LIFE.
+      </h1>
+      <p class="animate-rise mt-6 font-body text-[10px] font-semibold tracking-[0.2em] text-gold-soft uppercase" style="animation-delay: 100ms;">
+        Selected Work
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. FILTER BAR -->
+  <section class="bg-ivory py-8 border-b border-hairline">
+    <div class="flex flex-wrap justify-center gap-6 md:gap-10 px-6">
+      <button class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-ink border-b border-ink pb-1">All</button>
+      <button class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-ink/40 hover:text-ink transition-colors pb-1">Watches</button>
+      <button class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-ink/40 hover:text-ink transition-colors pb-1">Jewellery</button>
+      <button class="font-body text-[10px] font-semibold uppercase tracking-[0.15em] text-ink/40 hover:text-ink transition-colors pb-1">OEM / ODM</button>
+    </div>
+  </section>
+
+  <!-- 3. PROJECTS GRID -->
+  <section class="bg-ivory py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        {placeholderProjects.map((p) => (
+          <div class="group relative aspect-square overflow-hidden bg-sand border border-hairline cursor-pointer">
+            <!-- Save images as "project-1.jpg" through "project-9.jpg" in the public folder -->
+            <img 
+              src={`/project-${p.id}.jpg`} 
+              alt="Project Detail" 
+              class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+            />
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-20 text-center">
+        <p class="font-body text-[11px] leading-relaxed text-ink/50 max-w-lg mx-auto mb-8">
+          This section is reserved for approved, verified projects. Client names, quantities, and specific outcomes will be published only once confirmed by Kesar and the relevant client.
+        </p>
+        <button class="border border-ink/30 px-8 py-3.5 font-body text-[10px] font-semibold uppercase tracking-widest text-ink hover:bg-ink hover:text-ivory transition-colors">
+          View More Projects
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BOTTOM CTA -->
+  <section class="bg-sand py-24 text-center border-t border-hairline">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="font-display text-4xl text-ink md:text-5xl">Want to be the next project here?</h2>
+      <a href="/start-a-project" class="mt-10 inline-block bg-ink px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-gold transition-colors">
+        Start a Project
+      </a>
+    </div>
+  </section>
+</Layout>

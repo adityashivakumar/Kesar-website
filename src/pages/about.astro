@@ -1,0 +1,167 @@
+---
+// src/pages/about.astro
+import Layout from "../layouts/Layout.astro";
+
+const timeline = [
+  { year: "2015", title: "The Beginning", desc: "Kesar is founded with a singular focus on precision manufacturing." },
+  { year: "2018", title: "First Partnerships", desc: "Expanding capabilities to serve premium global brands." },
+  { year: "2020", title: "Expansion", "desc": "Scaling our facility and integrating advanced OEM/ODM solutions." },
+  { year: "2023", title: "Aevum Launch", desc: "Development begins on Kesar's own precious-metal watch brand." },
+  { year: "2024", title: "Global Presence", desc: "Delivering end-to-end supply chain solutions to international markets." }
+];
+
+const philosophies = [
+  {
+    title: "People",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />`,
+    desc: "Master watchmakers, engineers, and designers dedicated to the relentless pursuit of perfection."
+  },
+  {
+    title: "Material",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />`,
+    desc: "An uncompromising commitment to precious metals—treating gold and silver not as accents, but as the foundation."
+  },
+  {
+    title: "Purpose",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />`,
+    desc: "Creating timepieces that outlast trends, engineered to be passed down through generations."
+  }
+];
+---
+
+<Layout
+  title="About Kesar"
+  description="The story, philosophy, and team behind Kesar's watchmaking excellence."
+>
+  <!-- 1. HERO SECTION -->
+  <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-ink text-center">
+    <div class="absolute inset-0">
+      <!-- Save as "about-hero.jpg" -->
+      <img src="/about-hero.jpg" alt="Built on Craft" class="w-full h-full object-cover opacity-50" />
+      <div class="absolute inset-0 bg-ink/40"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-4xl px-6 pt-10">
+      <h1 class="animate-rise font-display text-5xl md:text-6xl tracking-wide leading-[1.1] text-ivory">
+        BUILT ON CRAFT.<br />DRIVEN BY POSSIBILITY.
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. OUR STORY -->
+  <section class="bg-ivory py-24">
+    <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
+      <div>
+        <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Our Story</h2>
+        <p class="font-body text-sm leading-relaxed text-ink/70">
+          Kesar is a B2B watchmaking and product-development company with a strong focus on gold, silver and precious-metal watches. We are built to take a project from an early idea through to a finished, delivered timepiece.
+        </p>
+        <p class="mt-4 font-body text-sm leading-relaxed text-ink/70">
+          Every component we source, every design we refine, and every case we polish is driven by a singular obsession with manufacturing excellence and timeless durability.
+        </p>
+      </div>
+      <div class="aspect-[4/3] bg-sand overflow-hidden">
+        <!-- Save as "our-story.jpg" (e.g., a landscape or textured mood image) -->
+        <img src="/our-story.jpg" alt="Our Story" class="w-full h-full object-cover grayscale mix-blend-multiply" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OUR PHILOSOPHY -->
+  <section class="bg-sand py-24 text-center border-t border-hairline">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 mb-16">Our Philosophy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        {philosophies.map((phil) => (
+          <div class="flex flex-col items-center">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-ivory text-ink/40">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <Fragment set:html={phil.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-6 font-body text-xs font-semibold uppercase tracking-widest text-ink">{phil.title}</h3>
+            <p class="mt-4 font-body text-[11px] leading-relaxed text-ink/60 max-w-[250px]">{phil.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. OUR JOURNEY (TIMELINE) -->
+  <section class="bg-ivory py-24 border-t border-hairline">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 mb-20">Our Journey</h2>
+      
+      <div class="relative border-l border-hairline ml-4 md:mx-auto md:w-full md:border-l-0">
+        <!-- Desktop center line -->
+        <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-hairline -translate-x-1/2"></div>
+        
+        {timeline.map((item, index) => (
+          <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 pl-8 md:pl-0 last:mb-0 group">
+            
+            <!-- Mobile dot -->
+            <div class="md:hidden absolute left-[-4px] top-1.5 w-2 h-2 rounded-full bg-ink/30 transition-colors group-hover:bg-gold"></div>
+            
+            <!-- Left Side: Year (Desktop) -->
+            <div class="md:w-1/2 md:text-right md:pr-16 md:relative w-full text-left">
+              <span class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep md:text-3xl">{item.year}</span>
+              <!-- Desktop dot -->
+              <div class="hidden md:block absolute right-[-4px] top-1/2 w-2 h-2 rounded-full bg-ink/30 -translate-y-1/2 transition-colors group-hover:bg-gold"></div>
+            </div>
+            
+            <!-- Right Side: Event (Desktop) -->
+            <div class="md:w-1/2 md:text-left md:pl-16 mt-2 md:mt-0">
+              <h4 class="font-body text-[11px] font-semibold uppercase tracking-widest text-ink">{item.title}</h4>
+              <p class="mt-2 font-body text-[11px] text-ink/60 leading-relaxed">{item.desc}</p>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OUR TEAM -->
+  <section class="bg-sand py-24 border-t border-hairline">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 text-center mb-16">Our Team</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
+        <!-- Save images as "team-1.jpg", "team-2.jpg", "team-3.jpg" -->
+        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
+          <img src="/team-1.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+        </div>
+        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
+          <img src="/team-2.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+        </div>
+        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
+          <img src="/team-3.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SUSTAINABILITY -->
+  <section class="bg-ivory py-24 border-t border-hairline">
+    <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
+      <div class="md:order-2">
+        <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Sustainability</h2>
+        <p class="font-body text-sm leading-relaxed text-ink/70">
+          We believe that true luxury does not come at the expense of the environment. Kesar is committed to responsible sourcing, minimizing manufacturing waste, and developing processes that respect both the craftsman and the world we share.
+        </p>
+      </div>
+      <div class="aspect-[4/3] bg-sand overflow-hidden">
+        <!-- Save as "sustainability.jpg" -->
+        <img src="/sustainability.jpg" alt="Sustainability" class="w-full h-full object-cover grayscale mix-blend-multiply" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BOTTOM CTA (Dark per wireframe) -->
+  <section class="bg-ink py-24 text-center border-t border-hairline">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="font-display text-4xl text-ivory md:text-5xl">HAVE A TIMEPIECE IN MIND?</h2>
+      <a href="/start-a-project" class="mt-10 inline-block border border-gold bg-transparent px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-gold hover:text-ink transition-colors">
+        Start a Project
+      </a>
+    </div>
+  </section>
+</Layout>

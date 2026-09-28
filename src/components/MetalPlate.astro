@@ -1,0 +1,39 @@
+---
+// src/components/MetalPlate.astro
+interface Props {
+  tone?: "gold" | "silver" | "graphite";
+  label?: string;
+  ratio?: string;
+  class?: string;
+}
+
+const { tone = "graphite", label, ratio = "aspect-[4/5]", class: className = "" } = Astro.props;
+
+const toneMap: Record<string, string> = {
+  gold: "from-[#3a2f18] via-[#8a7038] to-[#e8d9ab]",
+  silver: "from-[#2b2c2b] via-[#7d7e7c] to-[#e7e8e6]",
+  graphite: "from-[#0c0c0c] via-[#232323] to-[#3a3a3a]",
+};
+---
+
+<div class={`group relative overflow-hidden bg-ink ${ratio} ${className}`} role="img" aria-label={label ?? `${tone} watch photography placeholder`}>
+  <!-- Base surface with slow pan to mimic luxury product framing -->
+  <div class={`absolute inset-0 bg-gradient-to-br ${toneMap[tone]} opacity-90 transition-transform duration-1000 ease-out group-hover:scale-105`}></div>
+  
+  <!-- Texture mesh acting as a stand-in for 3D material mapping -->
+  <div class="absolute inset-0 mix-blend-overlay opacity-30 transition-opacity duration-700 group-hover:opacity-50" style="background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 4px);"></div>
+  
+  <!-- Interactive lighting/sheen overlay -->
+  <div class="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-[1.2s] ease-out group-hover:translate-x-[100%]"></div>
+  
+  <!-- Crisp inner border -->
+  <div class="absolute inset-0 ring-1 ring-inset ring-white/10 transition-colors duration-500 group-hover:ring-white/20"></div>
+  
+  {label && (
+    <div class="absolute bottom-4 left-4 overflow-hidden rounded-sm bg-ink/80 px-2.5 py-1.5 backdrop-blur-md ring-1 ring-white/5">
+      <span class="block font-body text-[11px] font-medium tracking-wide text-ivory/70 transition-colors duration-300 group-hover:text-ivory">
+        {label}
+      </span>
+    </div>
+  )}
+</div>

@@ -1,0 +1,106 @@
+---
+// src/pages/process.astro
+import Layout from "../layouts/Layout.astro";
+
+const steps = [
+  {
+    title: "Idea & Brief",
+    desc: "Every great timepiece starts with a conversation. We work closely with your team to understand the vision, target market, material requirements, and technical specifications for the project."
+  },
+  {
+    title: "Design",
+    desc: "Translating the initial brief into detailed aesthetic concepts. We explore case geometry, dial layout, hand proportions, and material finishes, ensuring the design is both beautiful and manufacturable."
+  },
+  {
+    title: "Development",
+    desc: "Engineering the approved design into a functional blueprint. We specify the movement, calculate exact tolerances for the precious metals, and finalize all internal component architecture."
+  },
+  {
+    title: "Prototyping",
+    desc: "Creating the first physical iteration of your timepiece. This allows us to test the weight, ergonomics, and visual impact of the gold or silver before committing to full-scale production."
+  },
+  {
+    title: "Production",
+    desc: "Our specialized facility begins the meticulous process of machining, casting, and finishing the precious metal cases and sourcing the exact dials, hands, and movements required."
+  },
+  {
+    title: "Assembly & QC",
+    desc: "Master watchmakers assemble the timepieces in a dust-free environment. Every watch undergoes rigorous multi-stage quality control, testing for water resistance, accuracy, and flawless finishing."
+  },
+  {
+    title: "Delivery",
+    desc: "The final timepieces are securely packaged and delivered to your specified global location, fully ready for retail presentation or immediate wear."
+  }
+];
+---
+
+<Layout
+  title="Our Process"
+  description="Kesar's step-by-step approach to precious-metal watchmaking, from initial idea to final delivery."
+>
+  <!-- 1. HERO SECTION (Dark per wireframe) -->
+  <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-ink text-center">
+    <div class="absolute inset-0">
+      <!-- Save as "process-hero.jpg" -->
+      <img src="/process-hero.jpg" alt="Watchmaking Process" class="w-full h-full object-cover opacity-40" />
+      <div class="absolute inset-0 bg-ink/50"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-4xl px-6 pt-10">
+      <h1 class="animate-rise font-display text-5xl md:text-6xl tracking-wide leading-[1.1] text-ivory">
+        A CLEARER PATH TO<br />EXCEPTIONAL TIMEPIECES.
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. THE PROCESS LIST -->
+  <section class="bg-ivory py-24">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 text-center mb-20">Our Process</h2>
+      
+      <div class="flex flex-col gap-16 md:gap-24">
+        {steps.map((step, index) => (
+          <div class="group flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            
+            <!-- Left: Image -->
+            <div class="w-full md:w-5/12 aspect-[4/3] bg-sand overflow-hidden border border-hairline shrink-0">
+              <!-- Save as "process-1.jpg" through "process-7.jpg" -->
+              <img 
+                src={`/process-${index + 1}.jpg`} 
+                alt={step.title} 
+                class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+              />
+            </div>
+            
+            <!-- Right: Text Content -->
+            <div class="w-full md:w-7/12 flex gap-6 md:gap-10">
+              <!-- Large Number -->
+              <div class="font-display text-5xl md:text-7xl text-ink/20 transition-colors group-hover:text-gold-soft shrink-0 pt-2">
+                0{index + 1}
+              </div>
+              
+              <!-- Title & Description -->
+              <div>
+                <h3 class="font-display text-3xl md:text-4xl text-ink mb-4">{step.title}</h3>
+                <p class="font-body text-sm leading-relaxed text-ink/70 max-w-lg">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- 3. BOTTOM CTA -->
+  <section class="bg-sand py-24 text-center border-t border-hairline">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="font-display text-4xl text-ink md:text-5xl">Ready to begin?</h2>
+      <a href="/start-a-project" class="mt-10 inline-block bg-ink px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-gold transition-colors">
+        Start a Project
+      </a>
+    </div>
+  </section>
+</Layout>

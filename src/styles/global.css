@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;         /* deep black for text */
+  --color-ivory: #ffffff;       /* pure white for main backgrounds */
+  --color-sand: #f7f6f2;        /* off-white for alternate sections */
+  --color-graphite: #333333;    /* softer dark text */
+  --color-gold: #b89a5a;        /* gold accent */
+  --color-gold-soft: #d8c48f;   
+  --color-gold-deep: #8a7038;   
+  --color-silver: #bfc0be;      
+  --color-hairline: rgba(10, 10, 10, 0.1); /* dark borders on light bg */
+  --color-hairline-light: rgba(255, 255, 255, 0.1); /* light borders on dark bg */
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@keyframes sheen {
+  0% { transform: translateX(-120%) skewX(-12deg); opacity: 0; }
+  12% { opacity: 0.55; }
+  60% { opacity: 0.15; }
+  100% { transform: translateX(220%) skewX(-12deg); opacity: 0; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-sheen { animation: sheen 2.4s ease-out 1; }
+.animate-rise { animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-ivory);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ivory);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1.5px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.prose-copy p {
+  max-width: 62ch;
+}
