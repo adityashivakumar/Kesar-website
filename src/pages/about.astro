@@ -52,10 +52,11 @@ const philosophies = [
     <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
       <div>
         <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Our Story</h2>
-        <p class="font-body text-sm leading-relaxed text-ink/70">
+        <!-- Increased from text-sm to text-base md:text-lg -->
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
           Kesar is a B2B watchmaking and product-development company with a strong focus on gold, silver and precious-metal watches. We are built to take a project from an early idea through to a finished, delivered timepiece.
         </p>
-        <p class="mt-4 font-body text-sm leading-relaxed text-ink/70">
+        <p class="mt-4 font-body text-base md:text-lg leading-relaxed text-ink/70">
           Every component we source, every design we refine, and every case we polish is driven by a singular obsession with manufacturing excellence and timeless durability.
         </p>
       </div>
@@ -79,7 +80,8 @@ const philosophies = [
               </svg>
             </div>
             <h3 class="mt-6 font-body text-xs font-semibold uppercase tracking-widest text-ink">{phil.title}</h3>
-            <p class="mt-4 font-body text-[11px] leading-relaxed text-ink/60 max-w-[250px]">{phil.desc}</p>
+            <!-- Increased from text-[11px] to text-sm md:text-base -->
+            <p class="mt-4 font-body text-sm md:text-base leading-relaxed text-ink/70 max-w-[280px]">{phil.desc}</p>
           </div>
         ))}
       </div>
@@ -111,7 +113,8 @@ const philosophies = [
             <!-- Right Side: Event (Desktop) -->
             <div class="md:w-1/2 md:text-left md:pl-16 mt-2 md:mt-0">
               <h4 class="font-body text-[11px] font-semibold uppercase tracking-widest text-ink">{item.title}</h4>
-              <p class="mt-2 font-body text-[11px] text-ink/60 leading-relaxed">{item.desc}</p>
+              <!-- Increased from text-[11px] to text-sm md:text-base -->
+              <p class="mt-2 font-body text-sm md:text-base text-ink/70 leading-relaxed">{item.desc}</p>
             </div>
             
           </div>
@@ -120,21 +123,40 @@ const philosophies = [
     </div>
   </section>
 
-  <!-- 5. OUR TEAM -->
+<!-- 5. OUR TEAM -->
   <section class="bg-sand py-24 border-t border-hairline">
-    <div class="mx-auto max-w-5xl px-6">
-      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 text-center mb-16">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
-        <!-- Save images as "team-1.jpg", "team-2.jpg", "team-3.jpg" -->
-        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
-          <img src="/team-1.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+    <div class="mx-auto max-w-6xl px-6 text-center">
+      <h2 class="font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50 mb-16">Our Team</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        
+        <!-- Team Member 1 -->
+        <div class="flex flex-col items-center justify-center p-12 border border-hairline bg-ivory hover:border-gold transition-colors duration-300">
+          <h3 class="font-display text-3xl text-ink mb-2">Vikas Sharma</h3>
+          <p class="font-body text-sm font-semibold uppercase tracking-widest text-gold-deep mb-6">Founder & Director</p>
+          <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
+            Guiding Kesar's vision through decades of precious-metal and watchmaking expertise.
+          </p>
         </div>
-        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
-          <img src="/team-2.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+
+        <!-- Team Member 2 -->
+        <div class="flex flex-col items-center justify-center p-12 border border-hairline bg-ivory hover:border-gold transition-colors duration-300">
+          <h3 class="font-display text-3xl text-ink mb-2">Akshata Sharma</h3>
+          <p class="font-body text-sm font-semibold uppercase tracking-widest text-gold-deep mb-6">Head of Design</p>
+          <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
+            Directing product aesthetics, brand identity, and the creative vision across Kesar and Tarini.
+          </p>
         </div>
-        <div class="aspect-[3/4] bg-ivory overflow-hidden group">
-          <img src="/team-3.jpg" alt="Team Member" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
+
+        <!-- Team Member 3 -->
+        <div class="flex flex-col items-center justify-center p-12 border border-hairline bg-ivory hover:border-gold transition-colors duration-300">
+          <h3 class="font-display text-3xl text-ink mb-2">Master Watchmakers</h3>
+          <p class="font-body text-sm font-semibold uppercase tracking-widest text-gold-deep mb-6">Assembly & QC</p>
+          <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
+            A dedicated team of craftsmen ensuring every timepiece meets strict Swiss-level standards.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -144,7 +166,8 @@ const philosophies = [
     <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
       <div class="md:order-2">
         <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Sustainability</h2>
-        <p class="font-body text-sm leading-relaxed text-ink/70">
+        <!-- Increased from text-sm to text-base md:text-lg -->
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
           We believe that true luxury does not come at the expense of the environment. Kesar is committed to responsible sourcing, minimizing manufacturing waste, and developing processes that respect both the craftsman and the world we share.
         </p>
       </div>
@@ -159,7 +182,8 @@ const philosophies = [
   <section class="bg-ink py-24 text-center border-t border-hairline">
     <div class="mx-auto max-w-3xl px-6">
       <h2 class="font-display text-4xl text-ivory md:text-5xl">HAVE A TIMEPIECE IN MIND?</h2>
-      <a href="/start-a-project" class="mt-10 inline-block border border-gold bg-transparent px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-gold hover:text-ink transition-colors">
+      <!-- Increased button text from text-xs to text-sm -->
+      <a href="/start-a-project" class="mt-10 inline-block border border-gold bg-transparent px-8 py-3.5 font-body text-sm font-semibold uppercase tracking-widest text-ivory hover:bg-gold hover:text-ink transition-colors">
         Start a Project
       </a>
     </div>

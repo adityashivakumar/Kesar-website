@@ -1,10 +1,10 @@
 ---
-// src/pages/our-brands/aevum.astro
+ // src/pages/our-brands/aevum.astro
 import Layout from "../../layouts/Layout.astro";
 
 const collection = [
-  { name: "Aevum I", image: "/aevum-1.jpg" },
-  { name: "Aevum II", image: "/aevum-2.jpg" },
+  { name: "Aevum I", image: "/aevum-1.svg" },
+  { name: "Aevum II", image: "/aevum-2.png" },
   { name: "Aevum III", image: "/aevum-3.jpg" }
 ];
 ---
@@ -13,95 +13,177 @@ const collection = [
   title="Aevum"
   description="Time in its purest form. Kesar's own gold and silver watch brand."
 >
-  <!-- 1. HERO SECTION (Dark per wireframe) -->
-  <section class="bg-ink pt-32 pb-24 border-b border-hairline overflow-hidden">
-    <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 items-center gap-16">
-      <div class="text-left z-10 relative lg:pl-10">
-        <h1 class="animate-rise font-display text-5xl md:text-7xl tracking-wide text-ivory">
+  <!-- 1. FULL-BACKGROUND HERO SECTION -->
+  <section
+    class="aevum-hero relative flex min-h-[calc(100svh-124px)] items-center overflow-hidden border-b border-hairline bg-ink"
+  >
+    <!-- Full hero background image -->
+    <img
+      src="/aevum-hero-bg.jpg"
+      alt="Aevum luxury gold and silver timepiece"
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover object-center"
+    />
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Gradient to improve text readability -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/10"
+    ></div>
+
+    <!-- Hero text -->
+    <div
+      class="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 md:py-32"
+    >
+      <div class="max-w-2xl text-left lg:pl-10">
+        <h1
+          class="animate-rise font-display text-5xl tracking-wide text-ivory md:text-7xl lg:text-8xl"
+        >
           AEVUM
         </h1>
-        <p class="animate-rise mt-4 font-display text-2xl md:text-3xl text-ivory/90" style="animation-delay: 100ms;">
+
+        <p
+          class="animate-rise mt-4 font-display text-2xl text-ivory/90 md:text-3xl"
+          style="animation-delay: 100ms;"
+        >
           TIME IN ITS PUREST FORM.
         </p>
-        <p class="animate-rise mt-6 font-body text-[11px] font-semibold tracking-[0.2em] text-gold-soft uppercase" style="animation-delay: 200ms;">
+
+        <p
+          class="animate-rise mt-6 font-body text-sm font-semibold uppercase tracking-[0.2em] text-gold-soft"
+          style="animation-delay: 200ms;"
+        >
           Gold and Silver Timepieces
         </p>
-        <div class="animate-rise mt-10" style="animation-delay: 300ms;">
-          <a href="#collection" class="inline-block border border-ivory/30 px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-ivory hover:text-ink transition-colors">
+
+        <div
+          class="animate-rise mt-10"
+          style="animation-delay: 300ms;"
+        >
+          <a
+            href="#collection"
+            class="inline-block border border-ivory/50 px-8 py-3.5 font-body text-sm font-semibold uppercase tracking-widest text-ivory transition-colors duration-300 hover:bg-ivory hover:text-ink"
+          >
             Explore Collection
           </a>
         </div>
       </div>
-      
-      <!-- Right: Hero Image -->
-      <div class="relative w-full aspect-square lg:aspect-auto lg:h-[600px] flex justify-center items-center">
-        <!-- Save as "aevum-hero-watch.png" (A transparent PNG of a watch looks best here) -->
-        <img 
-          src="/aevum-hero-watch.png" 
-          alt="Aevum Watch" 
-          class="w-full h-full object-contain drop-shadow-2xl animate-rise" 
-          style="animation-delay: 400ms;" 
-        />
-      </div>
     </div>
   </section>
 
-  <!-- 2. THE COLLECTION -->
-  <section id="collection" class="bg-ivory py-24 text-center">
-    <div class="mx-auto max-w-6xl px-6">
-      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-16">
-        The Collection
-      </h2>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
-        {collection.map((watch) => (
-          <div class="group flex flex-col items-center cursor-pointer">
-            <div class="w-full aspect-[3/4] bg-sand overflow-hidden border border-hairline mb-6 flex items-center justify-center p-6">
-              <!-- Images should be saved as aevum-1.jpg, aevum-2.jpg, aevum-3.jpg -->
-              <img 
-                src={watch.image} 
-                alt={watch.name} 
-                class="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110" 
-              />
-            </div>
-            <h3 class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep">{watch.name}</h3>
-          </div>
-        ))}
-      </div>
+<!-- 2. THE COLLECTION -->
+<section id="collection" class="bg-ivory py-24 text-center">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2
+      class="mb-16 border-b border-hairline pb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50"
+    >
+      The Collection
+    </h2>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-12">
+      {collection.map((watch) => (
+        <div class="group flex cursor-pointer flex-col items-center">
+          <!-- Watch image container -->
+<!-- Watch image container -->
+<div
+  class="mb-6 aspect-[3/4] w-full overflow-hidden border border-hairline bg-sand"
+>
+  <img
+    src={watch.image}
+    alt={watch.name}
+    loading="lazy"
+    class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+  />
+</div>
+
+          <!-- Watch name -->
+          <h3
+            class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep"
+          >
+            {watch.name}
+          </h3>
+        </div>
+      ))}
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 3. THE PHILOSOPHY -->
-  <section class="bg-sand py-24 border-t border-hairline">
-    <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
+  <section class="border-t border-hairline bg-sand py-24">
+    <div
+      class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2"
+    >
       <div>
-        <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">
+        <h2
+          class="mb-8 border-b border-hairline pb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50"
+        >
           The Philosophy
         </h2>
-        <p class="font-body text-sm leading-relaxed text-ink/70 mb-4">
-          Aevum was born from a desire to return watchmaking to its most fundamental precious elements. By focusing exclusively on gold and silver, we strip away the superfluous to reveal the inherent character of the metal itself.
+
+        <p
+          class="mb-6 font-body text-base leading-relaxed text-ink/70 md:text-lg"
+        >
+          Aevum was born from a desire to return watchmaking to its most
+          fundamental precious elements. By focusing exclusively on gold
+          and silver, we strip away the superfluous to reveal the inherent
+          character of the metal itself.
         </p>
-        <p class="font-body text-sm leading-relaxed text-ink/70">
-          Every curve, every polished facet, and every millimeter of the case is designed to celebrate the weight, warmth, and enduring value of these materials.
+
+        <p
+          class="font-body text-base leading-relaxed text-ink/70 md:text-lg"
+        >
+          Every curve, every polished facet, and every millimeter of the
+          case is designed to celebrate the weight, warmth, and enduring
+          value of these materials.
         </p>
       </div>
-      <div class="aspect-[4/3] bg-ivory overflow-hidden border border-hairline group">
-        <!-- Save as "aevum-philosophy.jpg" -->
-        <img 
-          src="/aevum-philosophy.jpg" 
-          alt="Aevum Philosophy" 
-          class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+
+      <div
+        class="group aspect-[4/3] overflow-hidden border border-hairline bg-ivory"
+      >
+        <img
+          src="/aevum-philosophy.jpg"
+          alt="Aevum watchmaking philosophy"
+          loading="lazy"
+          class="h-full w-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
         />
       </div>
     </div>
   </section>
 
-  <!-- 4. BOTTOM CTA (Dark per wireframe) -->
-  <section class="bg-ink py-32 text-center border-t border-hairline">
+  <!-- 4. BOTTOM CALL TO ACTION -->
+  <section
+    class="border-t border-hairline bg-ink py-32 text-center"
+  >
     <div class="mx-auto max-w-4xl px-6">
-      <h2 class="font-display text-4xl md:text-5xl text-ivory tracking-widest uppercase">
+      <h2
+        class="font-display text-4xl uppercase tracking-widest text-ivory md:text-5xl"
+      >
         CRAFTED FOR GENERATIONS.
       </h2>
     </div>
   </section>
 </Layout>
+
+<style>
+  .aevum-hero {
+    isolation: isolate;
+  }
+
+  .aevum-hero > img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 767px) {
+    .aevum-hero {
+      min-height: calc(100svh - 124px);
+    }
+
+    .aevum-hero > img {
+      object-position: 60% center;
+    }
+  }
+</style>

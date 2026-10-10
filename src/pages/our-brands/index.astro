@@ -3,62 +3,48 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout
-  title="Our Brands"
-  description="Kesar's own brands: Aevum, a gold and silver watch brand, and Tarini925, a 925 silver jewellery brand."
->
-  <!-- 1. HEADER -->
-  <section class="bg-ivory pt-32 pb-24 text-center border-b border-hairline">
-    <div class="mx-auto max-w-3xl px-6">
-      <h1 class="animate-rise font-display text-5xl text-ink tracking-wide md:text-6xl">
-        OUR BRANDS
-      </h1>
-      <p class="animate-rise mt-6 font-body text-[11px] font-semibold tracking-[0.2em] text-ink/60 uppercase" style="animation-delay: 100ms;">
-        Kesar's expertise, expressed as its own.
-      </p>
-      <p class="animate-rise mt-8 font-body text-sm leading-relaxed text-ink/70" style="animation-delay: 200ms;">
-        Aevum and Tarini925 are not services offered to clients — they are direct products of the same precious-metal expertise Kesar brings to its B2B watchmaking work.
+<Layout title="Our Brands" description="Kesar's own brands.">
+  
+  <section class="bg-ivory py-32 text-center border-b border-hairline">
+    <div class="mx-auto max-w-4xl px-6">
+      <h1 class="font-display text-5xl md:text-6xl text-ink tracking-wide">OUR BRANDS</h1>
+      <p class="mt-6 font-body text-lg leading-relaxed text-ink/70">
+        Aevum and Tarini925 are direct products of the same precious-metal expertise Kesar brings to its B2B watchmaking work.
       </p>
     </div>
   </section>
 
-  <!-- 2. AEVUM (Dark Section) -->
-  <section class="bg-ink text-ivory border-b border-hairline">
-    <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10 md:py-32">
-      <div class="relative aspect-[4/3] w-full overflow-hidden bg-ink/50 group">
-         <!-- Save image as "aevum-hero.jpg" in the public folder -->
-         <img src="/aevum-hero.jpg" alt="Aevum Watches" class="w-full h-full object-cover opacity-80 mix-blend-lighten transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="md:pl-10">
-        <p class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-soft">Watches</p>
-        <h2 class="mt-4 font-display text-5xl md:text-6xl tracking-wide">AEVUM</h2>
-        <p class="mt-6 font-body text-sm leading-relaxed text-ivory/70">
-          Kesar's own gold and silver watch brand. Built around the character, weight, and beauty of precious metal timepieces. Currently in development.
+  <section class="grid grid-cols-1 md:grid-cols-2">
+    
+    <div class="relative flex flex-col items-center justify-center p-12 md:p-24 bg-ink text-ivory group overflow-hidden min-h-[75vh]">
+      <img src="/aevum-hero.jpg" alt="Aevum" class="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-1000 group-hover:scale-105" />
+      
+      <div class="relative z-10 text-center flex flex-col items-center">
+        <p class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft mb-4">Watches</p>
+        <h2 class="font-display text-5xl md:text-7xl tracking-widest mb-6">AEVUM</h2>
+        <p class="font-body text-base md:text-lg leading-relaxed text-ivory/70 max-w-md mb-10">
+          Kesar's own gold and silver watch brand. Built around the character, weight, and beauty of precious metal timepieces.
         </p>
-        <a href="/our-brands/aevum" class="mt-10 inline-block border border-ivory/30 px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory transition-colors hover:bg-ivory hover:text-ink">
+        <a href="/our-brands/aevum" class="border border-ivory px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest hover:bg-ivory hover:text-ink transition-colors">
           Explore Aevum
         </a>
       </div>
     </div>
-  </section>
 
-  <!-- 3. TARINI925 (Light Section) -->
-  <section class="bg-sand text-ink">
-    <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10 md:py-32">
-      <div class="md:order-2 relative aspect-[4/3] w-full overflow-hidden bg-ivory border border-hairline group">
-         <!-- Save image as "tarini-hero.jpg" in the public folder -->
-         <img src="/tarini-hero.jpg" alt="Tarini925 Jewellery" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
-      </div>
-      <div class="md:pr-10">
-        <p class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">Jewellery</p>
-        <h2 class="mt-4 font-display text-5xl md:text-6xl tracking-wide">TARINI925</h2>
-        <p class="mt-6 font-body text-sm leading-relaxed text-ink/70">
-          Kesar's own 925 silver jewellery brand, for direct and B2B customers. Developed with the same precious-metal craftsmanship Kesar brings to watchmaking.
+    <div class="relative flex flex-col items-center justify-center p-12 md:p-24 bg-sand text-ink group overflow-hidden min-h-[75vh]">
+      <img src="/tarini-hero.jpg" alt="Tarini925" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-multiply transition-transform duration-1000 group-hover:scale-105" />
+      
+      <div class="relative z-10 text-center flex flex-col items-center">
+        <p class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 mb-4">Jewellery</p>
+        <h2 class="font-display text-5xl md:text-7xl tracking-widest mb-6">TARINI925</h2>
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70 max-w-md mb-10">
+          Kesar's own 925 silver jewellery brand, for direct and B2B customers. Developed with the same precious-metal craftsmanship.
         </p>
-        <a href="/tarini925" class="mt-10 inline-block border border-ink px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-ivory">
+        <a href="/tarini925" class="border border-ink px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest hover:bg-ink hover:text-ivory transition-colors">
           Explore Tarini925
         </a>
       </div>
     </div>
+
   </section>
 </Layout>

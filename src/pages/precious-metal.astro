@@ -25,10 +25,8 @@ const benefits = [
   title="Precious Metal Watchmaking"
   description="Kesar's specialisation in gold, silver and precious-metal watchmaking."
 >
-  <!-- 1. HERO SECTION -->
   <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-ink text-center">
     <div class="absolute inset-0">
-      <!-- Save as "precious-metal-hero.jpg" -->
       <img src="/precious-metal-hero.jpg" alt="Precious Metal Crafting" class="w-full h-full object-cover opacity-50" />
       <div class="absolute inset-0 bg-ink/40"></div>
     </div>
@@ -39,11 +37,10 @@ const benefits = [
     </div>
   </section>
 
-  <!-- 2. WHY PRECIOUS METALS? -->
   <section class="bg-ivory py-24 text-center">
     <div class="mx-auto max-w-5xl px-6">
-      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Why Precious Metals?</h2>
-      <p class="mx-auto mt-8 max-w-3xl font-body text-sm leading-relaxed text-ink/70">
+      <h2 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 border-b border-hairline pb-4 mb-8">Why Precious Metals?</h2>
+      <p class="mx-auto mt-8 max-w-3xl font-body text-base md:text-lg leading-relaxed text-ink/70">
         Precious metal is the ultimate expression of watchmaking. It demands a higher level of craftsmanship, specialized tooling, and an uncompromising approach to quality control. Kesar is built entirely around this standard.
       </p>
       
@@ -55,89 +52,75 @@ const benefits = [
                 <Fragment set:html={benefit.icon} />
               </svg>
             </div>
-            <h3 class="mt-6 font-body text-[11px] font-semibold uppercase tracking-widest text-ink">{benefit.title}</h3>
-            <p class="mt-4 font-body text-[11px] leading-relaxed text-ink/60 max-w-[220px]">{benefit.desc}</p>
+            <h3 class="mt-6 font-body text-sm font-semibold uppercase tracking-widest text-ink">{benefit.title}</h3>
+            <p class="mt-4 font-body text-base leading-relaxed text-ink/60 max-w-[250px]">{benefit.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 3. GOLD IN WATCHMAKING -->
   <section class="bg-sand py-24 border-t border-hairline">
     <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
       <div class="aspect-[4/3] bg-ivory overflow-hidden group">
-        <!-- Save as "gold-watchmaking.jpg" -->
         <img src="/gold-watchmaking.jpg" alt="Gold Watchmaking" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
       </div>
       <div>
         <h3 class="font-display text-4xl text-ink tracking-wide mb-6">GOLD IN WATCHMAKING</h3>
-        <p class="font-body text-sm leading-relaxed text-ink/70 mb-4">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70 mb-4">
           Gold carries a weight and warmth that standard alloys cannot replicate. From 18K yellow gold to specialized rose and white gold blends, we manage the precise metallurgy required for durable, stunning watch cases and components.
         </p>
-        <p class="font-body text-sm leading-relaxed text-ink/70">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
           Our processes account for the unique malleability of gold, ensuring that every facet, bevel, and brushed surface holds its edge to the highest Swiss standards.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 4. SILVER IN WATCHMAKING -->
   <section class="bg-ivory py-24 border-t border-hairline">
     <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
       <div class="md:order-2 aspect-[4/3] bg-sand overflow-hidden group border border-hairline">
-        <!-- Save as "silver-watchmaking.jpg" -->
         <img src="/silver-watchmaking.jpg" alt="Silver Watchmaking" class="w-full h-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" />
       </div>
       <div>
         <h3 class="font-display text-4xl text-ink tracking-wide mb-6">SILVER IN WATCHMAKING</h3>
-        <p class="font-body text-sm leading-relaxed text-ink/70 mb-4">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70 mb-4">
           Often overlooked in modern horology, 925 sterling silver offers a brilliant, bright white luster that develops a unique, personal patina over time. 
         </p>
-        <p class="font-body text-sm leading-relaxed text-ink/70">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70">
           Kesar specializes in treating and machining silver to ensure it meets the rigorous durability requirements of daily wear, bringing this historic material back to the forefront of premium watchmaking.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 5. THE DIFFERENCE (Comparison Table) -->
-  <section class="bg-sand py-24 text-center border-t border-hairline">
-    <div class="mx-auto max-w-4xl px-6">
-      <h2 class="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50 mb-16">The Difference</h2>
+  <section class="bg-ivory py-32 border-t border-hairline">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 text-center mb-16">The Difference</h2>
       
-      <div class="grid grid-cols-3 border-b border-hairline pb-4 mb-4">
-        <div></div>
-        <div class="font-body text-[10px] font-semibold uppercase tracking-widest text-ink">Precious Metal</div>
-        <div class="font-body text-[10px] font-semibold uppercase tracking-widest text-ink/50">Standard Metal</div>
+      <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
+        <button class="diff-btn active border-b-2 border-gold pb-2 font-display text-lg md:text-xl text-ink transition-colors" data-id="value">Value</button>
+        <button class="diff-btn border-b-2 border-transparent pb-2 font-display text-lg md:text-xl text-ink/40 hover:text-ink transition-colors" data-id="durability">Durability</button>
+        <button class="diff-btn border-b-2 border-transparent pb-2 font-display text-lg md:text-xl text-ink/40 hover:text-ink transition-colors" data-id="aesthetics">Aesthetics</button>
+        <button class="diff-btn border-b-2 border-transparent pb-2 font-display text-lg md:text-xl text-ink/40 hover:text-ink transition-colors" data-id="legacy">Legacy</button>
       </div>
-      
-      <div class="flex flex-col text-sm font-body">
-        <div class="grid grid-cols-3 py-6 border-b border-hairline items-center">
-          <div class="font-semibold text-ink text-left">Value</div>
-          <div class="text-ink/80 text-center">Intrinsic asset value, appreciates</div>
-          <div class="text-ink/40 text-center">Utilitarian, depreciates</div>
+
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
+        <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-ivory border border-hairline items-center justify-center z-10 font-display text-sm text-gold-deep shadow-sm">
+          VS
         </div>
-        <div class="grid grid-cols-3 py-6 border-b border-hairline items-center">
-          <div class="font-semibold text-ink text-left">Durability</div>
-          <div class="text-ink/80 text-center">Malleable, requires expert machining</div>
-          <div class="text-ink/40 text-center">Rigid, standard industrial machining</div>
+        <div class="bg-ink text-ivory p-12 md:p-16 text-center transition-opacity duration-300" id="pm-panel">
+          <h3 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft mb-6">Precious Metal</h3>
+          <p id="pm-text" class="font-display text-2xl md:text-3xl leading-snug">Intrinsic asset value, appreciates</p>
         </div>
-        <div class="grid grid-cols-3 py-6 border-b border-hairline items-center">
-          <div class="font-semibold text-ink text-left">Aesthetics</div>
-          <div class="text-ink/80 text-center">Deep luster, rich weight, unique patina</div>
-          <div class="text-ink/40 text-center">Flat reflection, standard weight</div>
-        </div>
-        <div class="grid grid-cols-3 py-6 items-center">
-          <div class="font-semibold text-ink text-left">Legacy</div>
-          <div class="text-ink/80 text-center">Heirloom quality</div>
-          <div class="text-ink/40 text-center">Disposable or easily replaced</div>
+        <div class="bg-sand text-ink p-12 md:p-16 text-center transition-opacity duration-300" id="sm-panel">
+          <h3 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 mb-6">Standard Metal</h3>
+          <p id="sm-text" class="font-display text-2xl md:text-3xl leading-snug text-ink/70">Utilitarian, depreciates</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. PULL QUOTE -->
   <section class="bg-ivory py-32 text-center border-t border-hairline">
     <div class="mx-auto max-w-3xl px-6">
       <p class="font-display text-3xl md:text-4xl text-ink leading-relaxed">
@@ -146,13 +129,58 @@ const benefits = [
     </div>
   </section>
 
-  <!-- 7. BOTTOM CTA -->
   <section class="bg-ink py-24 text-center border-t border-hairline">
     <div class="mx-auto max-w-3xl px-6">
       <h2 class="font-display text-4xl text-ivory md:text-5xl">HAVE A TIMEPIECE IN MIND?</h2>
-      <a href="/start-a-project" class="mt-10 inline-block border border-gold bg-transparent px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-widest text-ivory hover:bg-gold hover:text-ink transition-colors">
+      <a href="/start-a-project" class="mt-10 inline-block border border-gold bg-transparent px-8 py-3.5 font-body text-sm font-semibold uppercase tracking-widest text-ivory hover:bg-gold hover:text-ink transition-colors">
         Start a Project
       </a>
     </div>
   </section>
 </Layout>
+
+<script>
+  type ComparisonData = { [key: string]: { pm: string; sm: string } };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const data: ComparisonData = {
+      value: { pm: "Intrinsic asset value, appreciates", sm: "Utilitarian, depreciates" },
+      durability: { pm: "Malleable, requires expert machining", sm: "Rigid, standard industrial machining" },
+      aesthetics: { pm: "Deep luster, rich weight, unique patina", sm: "Flat reflection, standard weight" },
+      legacy: { pm: "Heirloom quality", sm: "Disposable or easily replaced" }
+    };
+
+    const buttons = document.querySelectorAll('.diff-btn');
+    const pmPanel = document.getElementById('pm-panel');
+    const smPanel = document.getElementById('sm-panel');
+    const pmText = document.getElementById('pm-text');
+    const smText = document.getElementById('sm-text');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('border-gold', 'text-ink');
+          b.classList.add('border-transparent', 'text-ink/40');
+        });
+
+        btn.classList.remove('border-transparent', 'text-ink/40');
+        btn.classList.add('border-gold', 'text-ink');
+
+        if(pmPanel && smPanel && pmText && smText) {
+          pmPanel.style.opacity = '0';
+          smPanel.style.opacity = '0';
+
+          setTimeout(() => {
+            const id = btn.getAttribute('data-id');
+            if(id && data[id]) {
+              pmText.textContent = data[id].pm;
+              smText.textContent = data[id].sm;
+            }
+            pmPanel.style.opacity = '1';
+            smPanel.style.opacity = '1';
+          }, 300);
+        }
+      });
+    });
+  });
+</script>

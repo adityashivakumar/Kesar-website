@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const pageTitle = title === "Kesar" ? "Kesar — Precious-Metal Watchmaking & Development" : `${title} — Kesar`;
+const pageTitle = title === "Kesar" ? "Kesar — Precious-Metal Watchmaking" : `${title} — Kesar`;
 ---
 
 <!doctype html>
@@ -17,20 +17,15 @@ const pageTitle = title === "Kesar" ? "Kesar — Precious-Metal Watchmaking & De
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen flex flex-col bg-ivory text-ink">
     <Nav />
-    <main class="flex-1 pt-20">
+    <main class="flex-1 pt-28">
       <slot />
     </main>
     <Footer />
