@@ -3,8 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 const categories = [
   { name: "Rings", image: "/tarini-rings.jpg" },
-  { name: "Bracelets", image: "/tarini-bracelets.jpg" },
-  { name: "Necklaces", image: "/tarini-necklaces.jpg" }
+  { name: "Earrings", image: "/tarini-earrings.jpg" }
 ];
 ---
 
@@ -63,14 +62,15 @@ const categories = [
 
   <!-- 2. OUR COLLECTION -->
   <section id="collection" class="bg-ivory py-24 text-center">
-    <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-5xl px-6">
       <h2
         class="mb-16 border-b border-hairline pb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50"
       >
         Our Collection
       </h2>
 
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-12">
+      <!-- Balanced 2-column layout for Rings and Earrings -->
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-16 max-w-3xl mx-auto">
         {categories.map((category) => (
           <div class="group flex cursor-pointer flex-col items-center">
             <div class="mb-6 aspect-[4/5] w-full overflow-hidden border border-hairline bg-sand">
@@ -78,7 +78,7 @@ const categories = [
                 src={category.image}
                 alt={category.name}
                 loading="lazy"
-                class="h-full w-full object-cover grayscale mix-blend-multiply transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
