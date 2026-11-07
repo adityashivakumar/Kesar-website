@@ -77,20 +77,7 @@ export const capabilities: Capability[] = [
     detail:
       "Where a project doesn't fit an existing template, Kesar scopes and develops around the client's own requirements and constraints.",
   },
-  {
-    slug: "sourcing",
-    title: "Sourcing & Coordination",
-    short: "Component sourcing and production coordination.",
-    detail:
-      "Coordinating the materials, components and production steps a project needs, so a client has one point of accountability rather than many.",
-  },
-  {
-    slug: "delivery",
-    title: "Distribution & Delivery",
-    short: "Coordinating the finished product through to delivery.",
-    detail:
-      "Seeing a project through its final stage, from finished production run to delivery in the client's hands.",
-  },
+  
 ];
 
 export type ProcessStep = {
