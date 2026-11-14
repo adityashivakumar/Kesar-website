@@ -18,12 +18,15 @@ import Layout from "../../layouts/Layout.astro";
     
     <!-- Aevum Card -->
     <div class="relative flex flex-col items-center justify-center p-12 md:p-24 bg-ink text-ivory group overflow-hidden min-h-[75vh]">
-      <img src="/aevum-hero.jpg" alt="Aevum" class="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-1000 group-hover:scale-105" />
+      <img src="/aevum-hero.jpg" alt="Aevum" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 group-hover:scale-105" />
       
-      <div class="relative z-10 text-center flex flex-col items-center">
+      <!-- Dark transparent overlay for high text readability -->
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      
+      <div class="relative z-20 text-center flex flex-col items-center">
         <p class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft mb-4">Watches</p>
         <h2 class="font-display text-5xl md:text-7xl tracking-widest mb-6">AEVUM</h2>
-        <p class="font-body text-base md:text-lg leading-relaxed text-ivory/70 max-w-md mb-10">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ivory/80 max-w-md mb-10">
           Kesar's own gold and silver watch brand. Built around the character, weight, and beauty of precious metal timepieces.
         </p>
         <a href="/our-brands/aevum" class="border border-ivory px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest hover:bg-ivory hover:text-ink transition-colors">
@@ -34,12 +37,15 @@ import Layout from "../../layouts/Layout.astro";
 
     <!-- Tarini925 Card -->
     <div class="relative flex flex-col items-center justify-center p-12 md:p-24 bg-ink text-ivory group overflow-hidden min-h-[75vh]">
-      <img src="/tarini-hero.jpg" alt="Tarini925" class="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-1000 group-hover:scale-105" />
+      <img src="/tarini-hero.jpg" alt="Tarini925" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 group-hover:scale-105" />
       
-      <div class="relative z-10 text-center flex flex-col items-center">
+      <!-- Dark transparent overlay for high text readability -->
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      
+      <div class="relative z-20 text-center flex flex-col items-center">
         <p class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft mb-4">Jewellery</p>
         <h2 class="font-display text-5xl md:text-7xl tracking-widest mb-6">TARINI925</h2>
-        <p class="font-body text-base md:text-lg leading-relaxed text-ivory/70 max-w-md mb-10">
+        <p class="font-body text-base md:text-lg leading-relaxed text-ivory/80 max-w-md mb-10">
           Kesar's own 925 silver jewellery brand, for direct and B2B customers. Developed with the same precious-metal craftsmanship.
         </p>
         <a href="/tarini925" class="border border-ivory px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest hover:bg-ivory hover:text-ink transition-colors">

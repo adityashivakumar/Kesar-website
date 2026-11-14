@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Email configuration
-    $to = "hello@kesardesigns.com";
+    $to = "designs@kesardesigns.com";
     $subject = "New Project Inquiry from " . $name . ($company ? " (" . $company . ")" : "");
 
     // Construct the email body

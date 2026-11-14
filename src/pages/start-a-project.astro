@@ -62,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
             <h3 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 mb-2">Prefer to talk?</h3>
             <p class="font-body text-sm text-ink/70">Reach our team directly.</p>
           </div>
-          <a href="mailto:hello@kesardesigns.com" class="font-display text-lg text-ink hover:underline">hello@kesardesigns.com</a>
+          <a href="mailto:designs@kesardesigns.com" class="font-display text-lg text-ink hover:underline">designs@kesardesigns.com</a>
         </div>
 
       </form>
@@ -92,7 +92,7 @@ import Layout from "../layouts/Layout.astro";
 
       if (response.ok && result.status === 'success') {
         if (statusMsg) {
-          statusMsg.textContent = "Thank you! Your inquiry has been sent to hello@kesardesigns.com.";
+          statusMsg.textContent = "Thank you! Your inquiry has been sent to designs@kesardesigns.com.";
           statusMsg.style.color = "green";
         }
         form.reset();
@@ -101,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
       }
     } catch (error) {
       if (statusMsg) {
-        statusMsg.textContent = "Error sending message. Please email us directly at hello@kesardesigns.com";
+        statusMsg.textContent = "Error sending message. Please email us directly at designs@kesardesigns.com";
         statusMsg.style.color = "red";
       }
     }

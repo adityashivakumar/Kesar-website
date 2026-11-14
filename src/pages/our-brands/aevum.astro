@@ -1,5 +1,5 @@
 ---
- // src/pages/our-brands/aevum.astro
+// src/pages/our-brands/aevum.astro
 import Layout from "../../layouts/Layout.astro";
 
 const collection = [
@@ -73,42 +73,41 @@ const collection = [
     </div>
   </section>
 
-<!-- 2. THE COLLECTION -->
-<section id="collection" class="bg-ivory py-24 text-center">
-  <div class="mx-auto max-w-6xl px-6">
-    <h2
-      class="mb-16 border-b border-hairline pb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50"
-    >
-      The Collection
-    </h2>
+  <!-- 2. THE COLLECTION -->
+  <section id="collection" class="bg-ivory py-24 text-center">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2
+        class="mb-16 border-b border-hairline pb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50"
+      >
+        The Collection
+      </h2>
 
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-12">
-      {collection.map((watch) => (
-        <div class="group flex cursor-pointer flex-col items-center">
-          <!-- Watch image container -->
-<!-- Watch image container -->
-<div
-  class="mb-6 aspect-[3/4] w-full overflow-hidden border border-hairline bg-sand"
->
-  <img
-    src={watch.image}
-    alt={watch.name}
-    loading="lazy"
-    class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-  />
-</div>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-12">
+        {collection.map((watch) => (
+          <div class="group flex cursor-pointer flex-col items-center">
+            <!-- Watch image container -->
+            <div
+              class="mb-6 aspect-[3/4] w-full overflow-hidden border border-hairline bg-sand"
+            >
+              <img
+                src={watch.image}
+                alt={watch.name}
+                loading="lazy"
+                class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
 
-          <!-- Watch name -->
-          <h3
-            class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep"
-          >
-            {watch.name}
-          </h3>
-        </div>
-      ))}
+            <!-- Watch name -->
+            <h3
+              class="font-display text-2xl text-ink transition-colors group-hover:text-gold-deep"
+            >
+              {watch.name}
+            </h3>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- 3. THE PHILOSOPHY -->
   <section class="border-t border-hairline bg-sand py-24">
