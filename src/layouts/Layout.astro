@@ -24,6 +24,31 @@ const pageTitle = title === "Kesar" ? "Kesar — Precious-Metal Watchmaking" : `
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen flex flex-col bg-ivory text-ink">
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    
+    images.forEach(img => {
+      // Ensure lazy loading is active on all images
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+      if (!img.hasAttribute("decoding")) {
+        img.setAttribute("decoding", "async");
+      }
+
+      // If the image is already cached/loaded
+      if (img.complete) {
+        img.classList.add("is-loaded");
+      } else {
+        // Fade in gracefully once loading completes
+        img.addEventListener("load", () => {
+          img.classList.add("is-loaded");
+        });
+      }
+    });
+  });
+</script>
     <Nav />
     <main class="flex-1 pt-28">
       <slot />

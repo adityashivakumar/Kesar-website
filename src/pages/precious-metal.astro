@@ -25,13 +25,14 @@ const benefits = [
   title="Precious Metal Watchmaking"
   description="Kesar's specialisation in gold, silver and precious-metal watchmaking."
 >
-  <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-ink text-center">
-    <div class="absolute inset-0">
-      <img src="/precious-metal-hero.jpg" alt="Precious Metal Crafting" class="w-full h-full object-cover opacity-50" />
-      <div class="absolute inset-0 bg-ink/40"></div>
+  <!-- Hero Section with exact #FFFFFF background framing for clean picture-frame borders -->
+  <section class="relative flex min-h-[50vh] sm:min-h-[65vh] md:min-h-[85vh] w-full items-center justify-center overflow-hidden text-center py-12 px-6" style="background-color: #FFFFFF;">
+    <div class="absolute inset-0 w-full h-full flex items-center justify-center" style="background-color: #FFFFFF;">
+      <img src="/precious-metal-hero.jpg" alt="Precious Metal Crafting" class="w-full h-full object-contain object-center" />
+      <div class="absolute inset-0 bg-black/20"></div>
     </div>
     <div class="relative z-10 mx-auto max-w-4xl px-6 pt-10">
-      <h1 class="animate-rise font-display text-5xl md:text-6xl tracking-wide leading-[1.1] text-ivory">
+      <h1 class="animate-rise font-display text-3xl sm:text-5xl md:text-6xl tracking-wide leading-[1.1] text-ivory uppercase drop-shadow-md">
         GOLD. SILVER.<br />A HIGHER STANDARD.
       </h1>
     </div>

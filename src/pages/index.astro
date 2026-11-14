@@ -57,26 +57,49 @@ import { capabilities, materials } from "../lib/content";
     </div>
   </section>
 
-  <!-- 03. MORE THAN A WATCH MANUFACTURER (Bleed Layout) -->
-  <section class="relative bg-sand overflow-hidden flex items-center min-h-[70vh]">
-    <div class="mx-auto w-full max-w-7xl px-6 relative z-10 grid md:grid-cols-2 py-32">
-      <div class="md:pr-12 lg:pr-20">
-        <h2 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-ink/50">More than a watch manufacturer.</h2>
-        <p class="mt-6 font-display text-4xl leading-tight text-ink md:text-5xl">
-          Kesar spans design, components, and assembly for premium timepieces.
+
+<!-- Section: More Than a Watch Manufacturer -->
+
+
+<section class="bg-ivory py-24 md:py-36 border-b border-hairline overflow-hidden">
+  <div class="mx-auto max-w-[1400px] px-6 md:px-12">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column: Text Content -->
+      <div class="lg:col-span-7 flex flex-col items-start">
+        <p class="font-body text-xs font-semibold uppercase tracking-[0.25em] text-ink/50 mb-4">
+          More Than A Watch Manufacturer
         </p>
-        <p class="mt-8 font-body text-base md:text-lg leading-relaxed text-ink/70">
+        
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink tracking-tight uppercase leading-[1.1] mb-8">
+          Kesar spans design, components, and assembly for premium timepieces.
+        </h2>
+        
+        <p class="font-body text-base md:text-lg leading-relaxed text-ink/70 max-w-2xl mb-10">
           We are a B2B watchmaking and product-development company with a strong focus on gold, silver and precious-metal timepieces — from early idea to finished delivery.
         </p>
-        <a href="/about" class="mt-12 inline-block bg-ink px-8 py-4 font-body text-sm font-semibold uppercase tracking-wider text-ivory hover:bg-gold transition-colors">
+        
+        <a href="/about" class="border border-ink bg-ink px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-ivory hover:bg-transparent hover:text-ink transition-all duration-300">
           Discover Kesar
         </a>
       </div>
+
+      <!-- Right Column: Properly Constrained Image Card -->
+      <div class="lg:col-span-5 w-full">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-sand border border-hairline shadow-md group relative">
+          <img 
+            src="/workshop.jpg" 
+            alt="Kesar Workshop" 
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+          />
+        </div>
+      </div>
+
     </div>
-    <div class="relative w-full aspect-video md:aspect-auto md:absolute md:top-0 md:right-0 md:bottom-0 md:w-[48vw] lg:w-[50vw] shadow-2xl z-20">
-      <img src="/workshop.jpg" alt="Watchmaking Craftsmanship" class="h-full w-full object-cover" />
-    </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- 05. EXPLORE THE PROCESS -->
   <section class="bg-sand py-32 border-t border-hairline overflow-hidden">
@@ -132,26 +155,100 @@ import { capabilities, materials } from "../lib/content";
     </div>
   </section>
 
-  <!-- 06. OUR CAPABILITIES -->
-  <section class="bg-ivory py-32 text-center border-t border-hairline">
-    <div class="mx-auto max-w-6xl px-6">
-      <h2 class="font-body text-sm font-semibold uppercase tracking-[0.2em] text-ink/50 mb-20">Our Capabilities</h2>
-      <div class="grid grid-cols-1 gap-y-20 gap-x-12 sm:grid-cols-2 md:grid-cols-3">
-        {capabilities.slice(0, 6).map((cap) => (
-          <div class="flex flex-col items-center">
-            <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-full border border-hairline bg-transparent">
-              <div class="h-1.5 w-1.5 rounded-full bg-gold-soft"></div>
-            </div>
-            <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink">{cap.title}</h3>
-            <p class="mt-4 max-w-[240px] font-body text-base leading-relaxed text-ink/70">{cap.short}</p>
-          </div>
-        ))}
+ <!-- 06 capabilities -->
+<section class="bg-sand py-32 border-t border-hairline">
+  <div class="mx-auto max-w-7xl px-6 md:px-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-20">
+      <h2 class="font-body text-xs font-semibold uppercase tracking-[0.25em] text-ink/50 mb-4">
+        Our Capabilities
+      </h2>
+      <p class="font-display text-3xl md:text-5xl text-ink uppercase tracking-wide">
+        End-to-End Watchmaking Ecosystem
+      </p>
+    </div>
+
+    <!-- Capabilities Grid (3 columns x 2 rows) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">01 / OEM</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Watch OEM / ODM</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Custom manufacturing and development for existing watch brands.
+          </p>
+        </div>
       </div>
-      <a href="/capabilities" class="mt-24 inline-block border border-ink bg-transparent px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-ink hover:bg-ink hover:text-ivory transition-colors">
+
+      <!-- Card 2 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">02 / DESIGN</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Watch Design</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Concept and product design, from sketch to specification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">03 / DEV</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Product Development</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Turning a concept into a manufacturable product.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">04 / PARTS</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Components</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Cases, dials, hands, straps, movements and buckles.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">05 / CRAFT</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Manufacturing</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Production of watch components and finished timepieces.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-ivory p-10 border border-hairline hover:border-ink/40 transition-all duration-300 group flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="font-display text-xs tracking-widest text-gold-deep mb-6 block">06 / QC</span>
+          <h3 class="font-body text-sm font-semibold uppercase tracking-[0.15em] text-ink mb-3">Assembly</h3>
+          <p class="font-body text-base text-ink/70 leading-relaxed">
+            Watch assembly, finishing and quality checking.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Explore Full Capabilities Link -->
+    <div class="mt-16 text-center">
+      <a href="/capabilities" class="inline-block border border-ink px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-ink hover:bg-ink hover:text-ivory transition-colors">
         View All Capabilities
       </a>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- 08. BRANDS -->
   <section class="bg-ivory">

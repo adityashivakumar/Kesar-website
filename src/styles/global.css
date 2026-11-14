@@ -32,4 +32,32 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+/* Enable smooth scrolling across the entire site */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Luxury image loading & fade-in transition effect */
+img {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+img[loading="lazy"] {
+  /* Optional blur or fade effect before loading */
+}
+
+/* Base style for all images: start invisible and slightly scaled down */
+img {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Once loaded, smoothly fade and slide into place */
+img.is-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .animate-rise { animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1; }

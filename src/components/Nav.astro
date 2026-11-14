@@ -4,47 +4,45 @@
 
 <header class="fixed top-0 inset-x-0 z-50 flex flex-col w-full">
   
-  <!-- Top Announcement Bar (Redesigned for a High-End Luxury Aesthetic) -->
-  <div class="bg-[#050505] text-gold-soft py-2.5 px-6 md:px-12 flex justify-between items-center text-[11px] font-medium uppercase tracking-[0.25em] border-b border-white/10">
-    
-    <!-- Left: Actionable Enquire Link -->
-    <a href="/start-a-project" class="group flex items-center gap-3 text-gold-soft/90 hover:text-white transition-colors duration-300">
-      <span class="inline-block h-1.5 w-1.5 rounded-full bg-gold-soft group-hover:scale-125 transition-transform"></span>
-      <span>Bespoke Creations & Custom Manufacturing</span>
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#050505] text-gold-soft py-2.5 px-4 md:px-12 flex justify-between items-center text-[11px] font-medium uppercase tracking-[0.25em] border-b border-white/15 overflow-hidden">
+    <a href="/start-a-project" class="group flex items-center gap-2 text-gold-soft/90 hover:text-white transition-colors duration-300 truncate">
+      <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold-soft group-hover:scale-125 transition-transform"></span>
+      <span class="truncate">Bespoke Watchmaking & Manufacturing</span>
       <span class="tracking-normal opacity-60 group-hover:translate-x-1 transition-transform">→</span>
     </a>
-
-    <!-- Right: Subtle LinkedIn Link -->
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block text-gold-soft/70 hover:text-white transition-colors duration-300">
-      Connect on LinkedIn
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block text-gold-soft/70 hover:text-white transition-colors duration-300 shrink-0">
+      LinkedIn
     </a>
   </div>
 
   <!-- Main Navigation Bar -->
   <div class="bg-ivory/95 backdrop-blur-md border-b border-hairline w-full shadow-sm">
-    <div class="mx-auto max-w-[1600px] px-6 md:px-10 h-20 flex items-center justify-between">
+    <div class="mx-auto max-w-[1600px] px-4 md:px-10 h-20 flex items-center justify-between">
       
-      <div class="flex-1 flex justify-start items-center">
+      <div class="flex items-center">
         <a href="/" class="focus-visible:outline-none group">
-          <img src="/WhatsApp Image 2026-09-21 at 4.22.54 PM.jpeg" alt="Kesar" class="h-10 md:h-12 w-auto object-contain mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" />
+          <img src="/WhatsApp Image 2026-09-21 at 4.22.54 PM.jpeg" alt="Kesar" class="h-9 md:h-12 w-auto object-contain mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" />
         </a>
       </div>
 
-      <nav class="hidden md:flex flex-1 justify-center items-center gap-8 lg:gap-12">
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-12">
         <a href="/about" class="font-body text-sm font-semibold uppercase tracking-[0.1em] text-ink/80 hover:text-ink transition-colors">About</a>
         <a href="/capabilities" class="font-body text-sm font-semibold uppercase tracking-[0.1em] text-ink/80 hover:text-ink transition-colors">Capabilities</a>
         <a href="/our-brands" class="font-body text-sm font-semibold uppercase tracking-[0.1em] text-ink/80 hover:text-ink transition-colors">Brands</a>
       </nav>
 
-      <div class="hidden md:flex flex-1 justify-end items-center">
+      <div class="hidden md:flex items-center">
         <a href="/start-a-project" class="border border-ink bg-ink px-8 py-3.5 font-body text-sm font-semibold uppercase tracking-widest text-ivory hover:bg-transparent hover:text-ink transition-all">
           Start a Project
         </a>
       </div>
       
-      <div class="md:hidden flex flex-1 justify-end items-center">
-        <button class="text-ink focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" aria-label="Toggle Menu" class="text-ink p-2 focus:outline-none">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 transition-transform duration-300">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
@@ -52,4 +50,34 @@
 
     </div>
   </div>
+
+  <!-- Mobile Dropdown Menu Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden bg-ivory border-b border-hairline shadow-lg px-6 py-8 flex flex-col gap-6 text-left transition-all duration-300">
+    <a href="/about" class="mobile-link font-body text-base font-semibold uppercase tracking-[0.15em] text-ink/80 hover:text-ink">About</a>
+    <a href="/capabilities" class="mobile-link font-body text-base font-semibold uppercase tracking-[0.15em] text-ink/80 hover:text-ink">Capabilities</a>
+    <a href="/our-brands" class="mobile-link font-body text-base font-semibold uppercase tracking-[0.15em] text-ink/80 hover:text-ink">Brands</a>
+    <div class="pt-4 border-t border-hairline">
+      <a href="/start-a-project" class="block w-full text-center border border-ink bg-ink py-4 font-body text-sm font-semibold uppercase tracking-widest text-ivory">
+        Start a Project
+      </a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    
+    // Animate or swap icon between hamburger and close (X)
+    if (!menu?.classList.contains('hidden')) {
+      icon?.setAttribute('viewBox', '0 0 24 24');
+      icon!.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+    } else {
+      icon!.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+    }
+  });
+</script>
